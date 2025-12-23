@@ -9,3 +9,20 @@
 *use below scripts
 
 
+const links = Array.from(
+  document.querySelectorAll('a[href*="/items/"]')
+);
+
+const rows = links
+  .map(a => a.href.split("?")[0])
+  .filter(url => /\/items\/\d+/.test(url))
+  .map(url => ({ url }));
+
+const uniqueRows = Array.from(
+  new Map(rows.map(r => [r.url, r])).values()
+);
+
+console.log(JSON.stringify(uniqueRows, null, 2));
+
+
+
