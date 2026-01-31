@@ -8,6 +8,7 @@
 *3.Open devtools console (right click-->inspect--> and u will see console on edge browser)
 *use below scripts
 
+console.clear()
 
 const links = Array.from(
   document.querySelectorAll('a[href*="/items/"]')
